@@ -90,13 +90,10 @@ The complete list of packages and versions lives in **`requirements.txt`**.
 ---
 
 ## Results summary
-- **Question type distribution:** The dataset is dominated by **open-ended** questions (**13,878**) compared to **yes/no** questions (**8,190**).
-- **Yes/No answer ambiguity:** For `yes/no` questions, the answer type distribution shows frequent ambiguous outcomes, with `?` appearing **4,356** times, compared to `Y` = **2,521** and `N` = **1,313**.
-- **Popular product question trends:** The most frequently asked questions cluster around a small set of products (ASINs). In an example top-10 ASIN analysis, the most-asked ASIN was **B00JL9AY02 (36 questions)**.
-- **Text frequency patterns (EDA):** Common tokens in questions include very frequent general words such as **“the”, “i”, “a”, “is”, “size”, “what”**, suggesting that basic lexical cues alone may not fully capture intent without better normalization/feature engineering.
-- **Clustering (TF-IDF + KMeans feasibility test):** Using TF-IDF vectors and KMeans on questions from the most frequently asked products, clusters had **uneven sizes** (TF-IDF + KMeans with k=5 produced cluster counts: **110, 34, 6, 13, 7**), indicating that some semantic groupings are stronger than others in the popular-product subset.
-- **Ambiguity prediction (Logistic Regression):** A logistic regression baseline trained to predict whether a `yes/no` answer is ambiguous (`?`) using simple features like **question length** and **product frequency** achieved **0.56 accuracy** (classification report shown in the notebook).
-- **Transformer embeddings (Sentence-BERT):** Clustering was also performed using Sentence-BERT embeddings (`all-MiniLM-L6-v2`) on the same subset (top 10 ASINs, 170 questions). KMeans with k=5 produced SBERT cluster sizes: **42, 31, 36, 39, 22**, which were more balanced than the TF-IDF baseline.
+- **Data composition:** `open-ended` questions (**13,878**) exceed `yes/no` (**8,190**).
+- **Yes/no ambiguity:** ambiguous `?` answers are common (**4,356**).
+- **Clustering:** TF‑IDF + KMeans (k=5) is imbalanced (**110, 34, 6, 13, 7**), while SBERT + KMeans is more balanced (**42, 31, 36, 39, 22**).
+- **Ambiguity prediction:** Logistic Regression baseline reaches **0.56 accuracy** (classification metrics in notebook).
 
 ---
 
