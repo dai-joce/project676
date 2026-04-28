@@ -60,13 +60,14 @@ Python version:
 - `Python 3.12.13`
 
 Major packages used:
-- `pandas`
-- `numpy`
-- `matplotlib`
-- `seaborn`
-- `scikit-learn`
-- `sentence-transformers` (e.g., `all-MiniLM-L6-v2`)
-- `python-louvain`, `igraph` 
+- `pandas 2.2.2`
+- `numpy 2.0.2`
+- `matplotlib 3.10.0`
+- `seaborn 0.13.2`
+- `scikit-learn 1.6.1`
+- `sentence-transformers 5.4.1`
+- `huggingface_hub 1.11.0`
+- `scipy 1.16.3`
 
 The complete list of packages and versions lives in **`requirements.txt`**.
 
