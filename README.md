@@ -10,7 +10,7 @@ This project explores the **Amazon Clothing, Shoes, and Jewelry Q&A** dataset, w
 The main deliverable is the curated notebook:
 - **`main_notebook.ipynb`**
 
-This is the notebook we used for the final analysis, results, and conclusions.
+This is the notebook I used for the final analysis, results, and conclusions.
 
 ---
 
@@ -23,9 +23,9 @@ This is the notebook we used for the final analysis, results, and conclusions.
 ---
 
 ## Data
-**Dataset:** Amazon Clothing, Shoes and Jewelry Q&A  
+**Dataset:** Amazon Clothing, Shoes, and Jewelry Q&A  
 Source: https://cseweb.ucsd.edu/~jmcauley/datasets/amazon/qa/  
-Direct download (used in Colab):  
+Direct download:  
 https://mcauleylab.ucsd.edu/public_datasets/data/amazon/qa/qa_Clothing_Shoes_and_Jewelry.json.gz
 
 **What I did (preprocessing):**
@@ -44,22 +44,22 @@ At the root of the repo you should have:
 - **`requirements.txt`** (exported with `!pip freeze > requirements.txt`)
 
 ### Steps to reproduce
-In general, follow the order below (adjust if your repo filenames differ):
+In general, follow the order below:
 
 1. Open the notebooks in this order:
-   - `checkpoints/checkpoint_1.ipynb` (optional)
-   - `checkpoints/checkpoint_2.ipynb` (optional)
+   - `checkpoints/project_chkpt1.ipynb` (optional)
+   - `checkpoints/project_chkpt2.ipynb` (optional)
    - `main_notebook.ipynb` ✅
 2. Ensure your environment matches `requirements.txt`
 3. Run the cells top-to-bottom in **`main_notebook.ipynb`**, especially the data load and model sections
 
 ---
 
-## Key dependencies (important versions)
-Python version (from Colab):
-- **Update this line if you want it exact**: `Python 3.12.13`
+## Key dependencies
+Python version:
+- `Python 3.12.13`
 
-Major packages used (from your Colab installs and code):
+Major packages used:
 - `pandas`
 - `numpy`
 - `matplotlib`
