@@ -1,27 +1,91 @@
-# Amazon Clothing, Shoes, and Jewelry Q&A Data Mining Project
+# Amazon Clothing, Shoes, and Jewelry Q&A — Question Clustering & Answer Ambiguity Analysis
 
-## Overview
-This project explores the Amazon Clothing, Shoes, and Jewelry Q&A dataset, which contains over 22,000 paired customer questions and answers about products. The goal is to uncover patterns, improve answer quality, and experiment with advanced text mining and NLP models.
+This project explores the **Amazon Clothing, Shoes, and Jewelry Q&A** dataset, which contains **22k+ paired customer questions and answers**. The goal is to uncover patterns in how customers ask product questions, investigate what signals **ambiguity** (especially in yes/no questions), and test whether modern NLP embeddings (transformer-based sentence representations) can improve **grouping/retrieval** of semantically similar questions.  
 
-## Dataset
-- **Source:** [Amazon Q&A data (Julian McAuley, UCSD)]([https://mcauleylab.ucsd.edu/public_datasets.html](https://cseweb.ucsd.edu/~jmcauley/datasets/amazon/qa/))
-- **Category:** Clothing, Shoes, and Jewelry
-- **Entries:** 22,068 Q&A pairs
-- **Attributes:** Product ID (ASIN), question type, answer type, timestamps, question text, answer text
+🎥 **Project video:** https://youtu.be/IPUn4PxG8jM
 
-## Project Goals
-- Perform exploratory data analysis (EDA) to understand question and answer patterns
-- Identify product popularity trends and ambiguous answers
-- Apply clustering and transformer-based NLP models to improve answer reliability and retrieval
+---
 
-## Usage
-1. Download the dataset (see `download_dataset.py`).
-2. Load and preprocess the data with Python (see `eda.ipynb`).
-3. Run EDA and experiments.
+## 👉 Start here: `main_notebook.ipynb`
+The main deliverable is the curated notebook:
+- **`main_notebook.ipynb`**
 
-## Requirements
-- Python 3.6+
-- pandas, numpy, matplotlib, seaborn
+This is the notebook we used for the final analysis, results, and conclusions.
+
+---
+
+## Research questions
+1. How can **clustering** and **advanced language models** be used to automatically group similar customer questions and improve retrieval of clear, helpful answers?
+2. What patterns or clusters emerge among the most frequently asked questions for popular products?
+3. Which factors are most indicative of **ambiguous answers** to **yes/no** questions?
+4. Can **transformer-based** language models improve grouping and retrieval of semantically similar questions compared to traditional clustering approaches?
+
+---
+
+## Data
+**Dataset:** Amazon Clothing, Shoes and Jewelry Q&A  
+Source: https://cseweb.ucsd.edu/~jmcauley/datasets/amazon/qa/  
+Direct download (used in Colab):  
+https://mcauleylab.ucsd.edu/public_datasets/data/amazon/qa/qa_Clothing_Shoes_and_Jewelry.json.gz
+
+**What I did (preprocessing):**
+- Lowercased questions
+- Removed punctuation/normalized tokens (tokenization was used for word frequency analysis)
+- Filtered out missing/empty entries
+- Used the cleaned question text for TF-IDF and embedding-based clustering
+
+---
+
+## Reproducing the project (Colab workflow)
+This project was built/run in **Google Colab**.
+
+### Requirements
+At the root of the repo you should have:
+- **`requirements.txt`** (exported with `!pip freeze > requirements.txt`)
+
+### Steps to reproduce
+In general, follow the order below (adjust if your repo filenames differ):
+
+1. Open the notebooks in this order:
+   - `checkpoints/checkpoint_1.ipynb` (optional)
+   - `checkpoints/checkpoint_2.ipynb` (optional)
+   - `main_notebook.ipynb` ✅
+2. Ensure your environment matches `requirements.txt`
+3. Run the cells top-to-bottom in **`main_notebook.ipynb`**, especially the data load and model sections
+
+---
+
+## Key dependencies (important versions)
+Python version (from Colab):
+- **Update this line if you want it exact**: `Python 3.12.13`
+
+Major packages used (from your Colab installs and code):
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `seaborn`
+- `scikit-learn`
+- `sentence-transformers` (e.g., `all-MiniLM-L6-v2`)
+- `python-louvain`, `igraph` 
+
+The complete list of packages and versions lives in **`requirements.txt`**.
+
+---
+
+## Repo structure
+
+```text
+.
+├── main_notebook.ipynb
+├── requirements.txt
+├── .gitignore
+├── checkpoints/
+│   ├── checkpoint_1.ipynb
+│   └── checkpoint_2.ipynb
+├── data/
+│   └── qa_Clothing_Shoes_and_Jewelry.json.gz
+
+```
 
 ## Citations
 - Mengting Wan, Julian McAuley, "Modeling ambiguity, subjectivity, and diverging viewpoints in opinion question answering systems", ICDM 2016.
