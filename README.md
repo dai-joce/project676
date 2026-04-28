@@ -6,9 +6,9 @@ This project explores the **Amazon Clothing, Shoes, and Jewelry Q&A** dataset, w
 
 ---
 
-## 👉 Start here: `main_notebook.ipynb`
+## 👉 Start here: [`main_notebook.ipynb`](main_notebook.ipynb)
 The main deliverable is the curated notebook:
-- **`main_notebook.ipynb`**
+- **[`main_notebook.ipynb`](main_notebook.ipynb)**
 
 This is the notebook I used for the final analysis, results, and conclusions.
 
@@ -47,9 +47,9 @@ At the root of the repo you should have:
 In general, follow the order below:
 
 1. Open the notebooks in this order:
-   - `checkpoints/project_chkpt1.ipynb` (optional)
-   - `checkpoints/project_chkpt2.ipynb` (optional)
-   - `main_notebook.ipynb` ✅
+   - [`checkpoints/project_chkpt1.ipynb`](checkpoints/project_chkpt1.ipynb) (optional)
+   - [`checkpoints/project_chkpt2.ipynb`](checkpoints/project_chkpt2.ipynb) (optional)
+   - [`main_notebook.ipynb`](main_notebook.ipynb) ✅
 2. Ensure your environment matches `requirements.txt`
 3. Run the cells top-to-bottom in **`main_notebook.ipynb`**, especially the data load and model sections
 
