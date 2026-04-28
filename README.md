@@ -87,6 +87,26 @@ The complete list of packages and versions lives in **`requirements.txt`**.
 
 ```
 
+---
+
+## Results summary
+
+- **Question type distribution:** The dataset is dominated by **open-ended** questions (**13,878**) compared to **yes/no** questions (**8,190**).
+
+- **Yes/No answer ambiguity:** For `yes/no` questions, the answer type distribution shows frequent ambiguous outcomes, with **`?`** appearing **4,356** times, compared to **`Y` = 2,521** and **`N` = 1,313**.
+
+- **Popular product question trends:** The most frequently asked questions cluster around a small set of products (ASINs). In an example top-10 ASIN analysis, the most-asked ASIN was **B00JL9AY02 (36 questions)**.
+
+- **Text frequency patterns (EDA):** Common tokens in questions include very frequent general words such as **“the”, “i”, “a”, “is”, “size”, “what”**, suggesting that basic lexical cues alone may not fully capture intent without better normalization/feature engineering.
+
+- **Clustering (TF-IDF + KMeans feasibility test):** Using TF-IDF vectors and KMeans on questions from the most frequently asked products, clusters had **uneven sizes** (example K=5 cluster counts: **110, 34, 6, 13, 7**), indicating that some semantic groupings are stronger than others in the popular-product subset.
+
+- **Ambiguity prediction (Logistic Regression):** A logistic regression baseline trained to predict whether a `yes/no` answer is ambiguous (`?`) using simple features like **question length** and **product frequency** achieved **~0.56 accuracy** (classification report shown in the notebook).
+
+- **Transformer embeddings (Sentence-BERT):** I also tested clustering with transformer-based embeddings using `sentence-transformers` (e.g., **`all-MiniLM-L6-v2`**) to represent questions semantically, then applied KMeans to discover embedding-based question clusters for comparison with TF-IDF clustering.
+
+---
+
 ## Citations
 - Mengting Wan, Julian McAuley, "Modeling ambiguity, subjectivity, and diverging viewpoints in opinion question answering systems", ICDM 2016.
 - Julian McAuley, Alex Yang, "Addressing complex and subjective product-related queries with customer reviews", WWW 2016.
